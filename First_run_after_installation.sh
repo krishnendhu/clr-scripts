@@ -15,6 +15,6 @@ if [ "$name" = "Y" ];then
 	echo "Enter passwd:"
 	read password
 	useradd $username; echo -e "$password\n$password" | passwd $username
+	usermod -G wheel -a $name
 fi
 swupd bundle-add os-clr-on-clr desktop-autostart openssh-server os-utils-gui vim
-usermod -G wheel -a tester
